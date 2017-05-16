@@ -22,11 +22,11 @@ Report
 ```
 $ npm install --save-dev mochawesome
 $ ../node_modules/.bin/mocha --reporter mochawesome
-'``
+```
 
 ### configuration mocha.opts
-$ mocha --recursive --reporter tap --growl
 ```
+$ mocha --recursive --reporter tap --growl
 --reporter tap
 --recursive
 --growl
