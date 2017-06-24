@@ -14,7 +14,7 @@ deploy:
     secret_access_key: {AWS_TRAVIS_TOKEN}
     local_dir: dpl_cd_upload
     skip_cleanup: true
-    bucket: data.troyyang.com
     on:
-      repo:  Troy-Yang/demos
+      repo: Troy-Yang/demos
       branch: master
+    bucket: data.troyyang.com
