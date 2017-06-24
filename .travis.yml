@@ -17,3 +17,4 @@ deploy:
     bucket: data.troyyang.com
     on:
       repo:  Troy-Yang/demos
+      branch: master
