@@ -11,7 +11,7 @@ before_deploy:
 deploy:
   - provider: s3
     access_key_id: AKIAJ4CL4BCTBOVVEW5Q
-    secret_access_key: {AWS_TRAVIS_TOKEN}
+    secret_access_key: ${AWS_TRAVIS_TOKEN}
     local_dir: dpl_cd_upload
     skip_cleanup: true
     on:
