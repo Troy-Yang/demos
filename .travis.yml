@@ -1,10 +1,6 @@
 language: node_js
 node_js: stable
 
-install: "demos build start"
-
-script: true
-
 before_deploy:
   - zip -r latest *
   - mkdir -p dpl_cd_upload
