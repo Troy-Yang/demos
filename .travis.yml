@@ -15,3 +15,5 @@ deploy:
     local_dir: dpl_cd_upload
     skip_cleanup: true
     bucket: data.troyyang.com
+    on:
+      repo:  Troy-Yang/demos
