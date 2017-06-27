@@ -1,0 +1,11 @@
+<script>
+    require(['jquery', 'util', 'modules/module1', 'modules/module2'], function($, util, module, module2){
+        // method 1
+        var module2Title =module2.title;
+        // method 2
+        var module2Title = require('modules/module2').title;
+        
+        $("#page-content").html(module.title + "<br>" + util.title);
+    })
+</script>
+<div id="page-content"> </div>

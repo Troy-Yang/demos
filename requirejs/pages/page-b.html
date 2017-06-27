@@ -1,0 +1,6 @@
+<script>
+    require(['jquery', 'util', 'modules/module2'], function($, util, module){
+        $("#page-content").html(module.title + "<br>" + util.title);
+    })
+</script>
+<div id="page-content"> </div>
