@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root-1"></div>
+    <div id="root-2"></div>
+    <script type="text/babel">
+    
+    function formatName(user){
+        return user.firstName + ' ' + user.lastName;
+    }
+
+    const user = {
+        firstName: 'Troy',
+        lastName: 'Yang'
+    }
+
+    function getGreeting(user){
+        if(user){
+            return <h1>hello, {formatName(user)}</h1>;
+        }
+        return <h1>Hello, stranger!</h1>
+    }
+
+    const element = getGreeting(user);
+
+      ReactDOM.render(
+        element,
+        document.getElementById('root-1')
+      );
+
+      const element2 = React.createElement(
+          'h1',
+          {className: 'greeting'},
+          'hello, world! from root2'
+      )
+    //   const element2 = {
+    //       type: 'h1',
+    //       props:{
+    //           className: 'greeting',
+    //           children: 'hello world from root 2'
+    //       }
+    //   };
+
+      ReactDOM.render(element2, document.getElementById('root-2'))
+
+    </script>
+  </body>
+</html>
