@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="root-1"></div>
+    <div id="link-button"></div>
+    <script type="text/babel">
+
+      const element1 = (
+        <button onClick={clickme} >Click Me</button>
+      )
+
+      function clickme(){
+        alert("clicked me!");
+      }
+
+      ReactDOM.render(
+        element1,
+        document.getElementById('root-1')
+      );
+
+      function ActionLink() {
+        function handleClick(e) {
+            e.preventDefault();
+            console.log('The link was clicked.');
+        }
+
+        return (
+          <a href="#" onClick={handleClick}>
+            Click me
+          </a>
+        );
+      }
+
+      ReactDOM.render(
+        <ActionLink />,
+        document.getElementById('link-button')
+      );
+
+      class Toggle extends React.Component{
+        constructor(props){
+          super(props);
+          this.state = {isToggleOn: true};
+          this.handleClick = this.handleClick.bind(this);
+        }
+
+        handleClick(){
+          this.setState(preState => ({
+            isToggleOn: !preState.isToggleOn
+          }))
+        }
+
+        render(){
+          return (
+            <button onClick={this.handleClick}>
+              {this.state.isToggleOn?'On':'Off'}
+            </button>
+          )
+        }
+      }
+
+      ReactDOM.render(
+        <Toggle />,
+        document.getElementById('root')
+      )
+
+    </script>
+  </body>
+</html>
