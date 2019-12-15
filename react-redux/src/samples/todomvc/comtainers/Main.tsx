@@ -1,14 +1,16 @@
 import { connect } from 'react-redux';
 import Main from '../components/Main';
-import {completeAllTodo, clearCompleted} from '../actions'
+import {completeAllTodos, clearCompleted} from '../actions';
+import { getCompletedTodoCount } from '../selectors';
+import { StateTree } from '../types';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state: StateTree, ownProps) => ({
   todosCount: state.todos.length,
-  completedCount: state.todos.filter(todo => todo.completed).length,
+  completedCount: getCompletedTodoCount(state),
 });
 
 const mapDispatchToProps = {
-  completeAllTodo,
+  completeAllTodos,
   clearCompleted,
 }
 

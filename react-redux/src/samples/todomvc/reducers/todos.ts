@@ -31,9 +31,12 @@ const todos = (state = initState, action): Todo[]  => {
         return todo;
       });
     case types.COMPLETE_ALL_TODOS:
-      return state.map(todo => Object.assign(todo, {completed: true}));
+      return state.map(todo => ({
+        ...todo,
+        completed: true
+      }));
     case types.CLEAR_COMPLETED:
-      return state.filter(todo => todo.completed);
+      return state.filter(todo => !todo.completed);
     default:
       return state;
   }
